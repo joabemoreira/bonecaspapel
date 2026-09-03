@@ -4,6 +4,10 @@ import { FaqItem } from '../types';
 
 const FAQS: FaqItem[] = [
   {
+    q: "As bonecas vêm prontas ou preciso imprimir?",
+    a: "O material é 100% digital em formato PDF. Você recebe o acesso imediatamente após a compra para imprimir em casa sempre que quiser."
+  },
+  {
     q: "Para quem é indicado?",
     a: "É perfeito para mães que desejam criar momentos inesquecíveis, brincando e se conectando com suas filhas através de atividades manuais analógicas. Também é altamente recomendado para pais, avós, tios e professores que buscam uma alternativa saudável e divertida para desconectar as crianças das telas, estimulando a imaginação, a criatividade e a coordenação motora fina de forma mágica."
   },

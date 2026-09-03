@@ -13,20 +13,20 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
         aria-hidden="true" 
       />
       <div className="relative mx-auto max-w-3xl text-center">
-        <div className="flex flex-wrap items-center justify-center font-bubbly leading-none mb-2 gap-x-2 sm:gap-x-3 gap-y-2">
-          <span className="text-pink-500 text-4xl sm:text-5xl md:text-6xl drop-shadow-md tracking-wide text-stroke-white">
+        <div className="flex flex-wrap items-center justify-center font-bubbly font-bold leading-none mb-2 gap-x-2 sm:gap-x-3 gap-y-2">
+          <span className="text-amber-500 text-4xl sm:text-5xl md:text-6xl drop-shadow-md tracking-wide">
             +350
           </span>
-          <span className="text-white text-4xl sm:text-5xl md:text-6xl drop-shadow-md tracking-wide text-stroke-pink">
+          <span className="text-pink-500 text-4xl sm:text-5xl md:text-6xl drop-shadow-md tracking-wide">
             BONECAS
           </span>
-          <span className="text-white text-4xl sm:text-5xl md:text-6xl drop-shadow-md tracking-wide text-stroke-pink">
+          <span className="text-purple-600 text-4xl sm:text-5xl md:text-6xl drop-shadow-md tracking-wide">
             DE PAPEL
           </span>
         </div>
 
         <h2 className="text-[1.25rem] font-extrabold leading-snug tracking-tight text-slate-900 sm:text-3xl md:text-4xl mt-2 max-w-2xl mx-auto">
-          prontas para imprimir e transformar o tempo de tela em diversão de verdade.
+          Tire as crianças do celular e das telas com uma atividade prática que afasta o tédio e estimula a criatividade.
         </h2>
 
         <div className="mt-8 mb-6 mx-auto w-full max-w-lg md:max-w-xl">
@@ -54,7 +54,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-4">
             <div className="flex flex-col items-center text-center">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full text-[#b3375b] mb-1.5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full text-pink-500 mb-1.5">
                 <Printer className="h-7 w-7 stroke-[2]" />
               </div>
               <h3 className="font-extrabold text-slate-800 text-sm sm:text-base">
@@ -66,7 +66,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full text-[#b3375b] mb-1.5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full text-pink-500 mb-1.5">
                 <Clock className="h-7 w-7 stroke-[2]" />
               </div>
               <h3 className="font-extrabold text-slate-800 text-sm sm:text-base">
@@ -78,7 +78,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full text-[#b3375b] mb-1.5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full text-pink-500 mb-1.5">
                 <CloudDownload className="h-7 w-7 stroke-[2]" />
               </div>
               <h3 className="font-extrabold text-slate-800 text-sm sm:text-base">
@@ -90,7 +90,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full text-[#b3375b] mb-1.5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full text-pink-500 mb-1.5">
                 <Scissors className="h-7 w-7 stroke-[2]" />
               </div>
               <h3 className="font-extrabold text-slate-800 text-sm sm:text-base">
