@@ -6,22 +6,22 @@ const TESTIMONIALS: Testimonial[] = [
   {
     name: "Mariana Silva",
     text: "Minha filha não queria sair do tablet por nada. Imprimi o combo de princesas e ontem passamos 2 horas brincando juntas criando histórias. Foi muito especial, recomendo para todas as mães!",
-    avatar: "https://i.postimg.cc/qvrFX2M2/Captura-de-Tela-2026-03-08-a-s-17-05-34.png"
+    avatar: "/rosto1.webp"
   },
   {
     name: "Fernanda Costa",
     text: "Adorei a facilidade. É só imprimir e recortar! Minha filha sofia amou as opções de roupinhas e ficou horas trocando e imaginando. Salvou minhas tardes de fim de semana com ela!",
-    avatar: "https://i.postimg.cc/C1r73qgv/Captura-de-Tela-2026-03-08-a-s-17-02-47.png"
+    avatar: "/rosto2.webp"
   },
   {
     name: "Camila Rodrigues",
     text: "Eu lembro das bonecas de papel da minha infância e queria muito passar isso para elas. Esse material é incrível e lindo. Elas já colecionam as bonequinhas numa pasta. Muito prático e o valor é quase de graça pelo tanto de conteúdo.",
-    avatar: "https://i.postimg.cc/25N2sj4h/Captura-de-Tela-2026-03-18-a-s-21-17-01.png"
+    avatar: "/rosto3.webp"
   },
   {
     name: "Aline Moraes",
     text: "Estava buscando alternativas para diminuir o tempo de tela da minha filha e isso funcionou demais! O mais legal é que ela recorta tudo sozinha, o que está ajudando muito na coordenação motora.",
-    avatar: "https://i.postimg.cc/VvWn0HMP/Captura-de-Tela-2026-04-08-a-s-22-27-05.png"
+    avatar: "/rosto4.webp"
   }
 ];
 
@@ -64,6 +64,10 @@ export default function TestimonialsSection() {
                         <img
                           src={testimonial.avatar}
                           alt={testimonial.name}
+                          width={96}
+                          height={96}
+                          loading="lazy"
+                          decoding="async"
                           className="w-24 h-24 rounded-full object-cover shadow-lg border-4 border-white"
                           referrerPolicy="no-referrer"
                         />

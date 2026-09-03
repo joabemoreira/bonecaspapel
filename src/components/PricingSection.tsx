@@ -163,7 +163,7 @@ export default function PricingSection({ onBasicClick }: PricingSectionProps) {
 
             <a
               id="buy-complete-button"
-              href="https://pay.wiapy.com/o5_hxD82u7"
+              href="https://pay.wiapy.com/-lj7Rw0Hvb6c"
               className="mt-8 block w-full rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-4 sm:py-5 text-center text-[15px] sm:text-lg font-extrabold uppercase tracking-wide text-white shadow-xl shadow-pink-300/50 transition-all hover:scale-[1.02] hover:shadow-pink-400/50 hover:from-pink-600 hover:to-rose-600 active:scale-[0.98] relative z-10 cursor-pointer"
             >
               COMPRAR AGORA

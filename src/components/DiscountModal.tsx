@@ -68,14 +68,14 @@ export default function DiscountModal({ isOpen, onClose }: DiscountModalProps) {
           <div className="mt-6 space-y-3">
             <a
               id="discount-accept-cta"
-              href="https://pay.wiapy.com/If_UANhl_g"
+              href="https://pay.wiapy.com/6bTerw0Gok0e"
               className="block w-full rounded-2xl bg-pink-500 py-4 text-base font-extrabold uppercase text-white shadow-xl shadow-pink-200 transition hover:scale-[1.02] active:scale-95 text-center cursor-pointer"
             >
               APROVEITAR O DESCONTO
             </a>
             <a
               id="discount-decline-cta"
-              href="https://pay.wiapy.com/lrTKQm5kf3"
+              href="https://pay.wiapy.com/hdMoHHmCsDBJ"
               className="block w-full rounded-2xl bg-slate-100 py-3 text-sm font-bold text-slate-500 transition hover:bg-slate-200 text-center cursor-pointer"
             >
               COMPRAR O BÁSICO MESMO

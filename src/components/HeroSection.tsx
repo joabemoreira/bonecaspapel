@@ -1,6 +1,5 @@
 import { type MouseEvent } from 'react';
 import { ChevronDown, Printer, Clock, CloudDownload, Scissors } from 'lucide-react';
-import heroMockup from '../assets/images/hero_mockup_box_1788378993602.jpg';
 
 interface HeroSectionProps {
   onCtaClick: (e: MouseEvent<HTMLAnchorElement>) => void;
@@ -10,7 +9,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
     <section id="hero-section" className="relative overflow-hidden bg-gradient-to-b from-pink-50 via-white to-pink-50/30 px-4 pt-10 pb-12 sm:pt-16 sm:pb-20 border-b border-pink-100/50">
       <div 
-        className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" 
+        className="absolute inset-0 bg-pattern-cubes opacity-[0.03] pointer-events-none" 
         aria-hidden="true" 
       />
       <div className="relative mx-auto max-w-3xl text-center">
@@ -32,8 +31,13 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
 
         <div className="mt-8 mb-6 mx-auto w-full max-w-lg md:max-w-xl">
           <img
-            src={heroMockup}
+            src="/mockup_350_bonecas_papel.webp"
             alt="+350 Bonecas de Papel - Kit Completo para Imprimir e Recortar"
+            width={1264}
+            height={848}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-auto drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500 rounded-2xl"
             referrerPolicy="no-referrer"
           />

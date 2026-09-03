@@ -1,21 +1,16 @@
 import { Check } from 'lucide-react';
 
-const CAROUSEL_IMAGES = [
-  "https://i.postimg.cc/h41Pc4xd/Design-sem-nome-(2).png",
-  "https://i.postimg.cc/59SNb9vY/Design-sem-nome-(5).png",
-  "https://i.postimg.cc/FFVsNFcf/Design-sem-nome-(4).png",
-  "https://i.postimg.cc/zDFX8DWV/Design-sem-nome.png",
-  "https://i.postimg.cc/nVGcpV7X/Design-sem-nome-(3).png",
-  "https://i.postimg.cc/N0695bqb/Chat-GPT-Image-19-de-jun-de-2026-16-30-00.png",
-  "https://i.postimg.cc/XvfGpxSQ/Chat-GPT-Image-17-de-jun-de-2026-23-39-53.png",
-  "https://i.postimg.cc/h41Pc4xd/Design-sem-nome-(2).png",
-  "https://i.postimg.cc/59SNb9vY/Design-sem-nome-(5).png",
-  "https://i.postimg.cc/FFVsNFcf/Design-sem-nome-(4).png",
-  "https://i.postimg.cc/zDFX8DWV/Design-sem-nome.png",
-  "https://i.postimg.cc/nVGcpV7X/Design-sem-nome-(3).png",
-  "https://i.postimg.cc/N0695bqb/Chat-GPT-Image-19-de-jun-de-2026-16-30-00.png",
-  "https://i.postimg.cc/XvfGpxSQ/Chat-GPT-Image-17-de-jun-de-2026-23-39-53.png"
+const CAROUSEL_SAMPLES = [
+  "/amostra1.webp",
+  "/amostra2.webp",
+  "/amostra3.webp",
+  "/amostra4.webp",
+  "/amostra5.webp",
+  "/amostra6.webp",
+  "/amostra7.webp"
 ];
+
+const CAROUSEL_IMAGES = [...CAROUSEL_SAMPLES, ...CAROUSEL_SAMPLES];
 
 export default function WhatYouGetSection() {
   return (
@@ -46,7 +41,11 @@ export default function WhatYouGetSection() {
                 <img
                   src={imgUrl}
                   alt={`Amostra de Bonecas de Papel ${idx + 1}`}
-                  className="h-96 sm:h-[32rem] w-auto rounded-2xl object-cover shadow-sm border border-slate-100"
+                  loading="lazy"
+                  decoding="async"
+                  width={idx % 7 < 5 ? 236 : 533}
+                  height={idx % 7 < 5 ? 354 : 800}
+                  className="h-96 sm:h-[32rem] aspect-[2/3] w-auto rounded-2xl object-cover shadow-sm border border-slate-100"
                   referrerPolicy="no-referrer"
                 />
               </div>
