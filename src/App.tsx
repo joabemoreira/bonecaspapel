@@ -11,8 +11,46 @@ import FaqSection from './components/FaqSection';
 import DiscountModal from './components/DiscountModal';
 import Footer from './components/Footer';
 
+let hasTrackedViewContent = false;
+
 export default function App() {
   const [isDiscountModalOpen, setIsDiscountModalOpen] = useState(false);
+
+  // Track ViewContent event once when the "Escolha Seu Pacote" section (#planos) enters viewport
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (hasTrackedViewContent) return;
+
+    const target = document.getElementById('planos');
+    if (!target) return;
+
+    if (!('IntersectionObserver' in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasTrackedViewContent) {
+            hasTrackedViewContent = true;
+            if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+              (window as any).fbq('track', 'ViewContent');
+            }
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(target);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   // Preserve UTM parameters on checkout links if present in query string
   useEffect(() => {
