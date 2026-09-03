@@ -31,7 +31,13 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
 
         <div className="mt-8 mb-6 mx-auto w-full max-w-lg md:max-w-xl">
           <img
-            src="/mockup_350_bonecas_papel.webp"
+            src="/mokup.webp"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.endsWith('/mockup_350_bonecas_papel.webp')) {
+                target.src = '/mockup_350_bonecas_papel.webp';
+              }
+            }}
             alt="+350 Bonecas de Papel - Kit Completo para Imprimir e Recortar"
             width={1264}
             height={848}
