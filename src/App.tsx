@@ -3,10 +3,12 @@ import TopNotificationBar from './components/TopNotificationBar';
 import SalesToast from './components/SalesToast';
 import HeroSection from './components/HeroSection';
 import WhatYouGetSection from './components/WhatYouGetSection';
+import QualificationSection from './components/QualificationSection';
 import PricingSection from './components/PricingSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import GuaranteeSection from './components/GuaranteeSection';
 import AntiPiracySection from './components/AntiPiracySection';
+import PaperTypesSection from './components/PaperTypesSection';
 import FaqSection from './components/FaqSection';
 import DiscountModal from './components/DiscountModal';
 import Footer from './components/Footer';
@@ -110,17 +112,23 @@ export default function App() {
         {/* What You'll Receive & Image Carousel */}
         <WhatYouGetSection />
 
+        {/* Qualification Section */}
+        <QualificationSection />
+
         {/* Pricing Packages */}
         <PricingSection onBasicClick={handleBasicClick} />
 
         {/* Testimonials */}
         <TestimonialsSection />
 
-        {/* 7-Day Guarantee */}
+        {/* 30-Day Guarantee */}
         <GuaranteeSection />
 
         {/* Anti-Piracy Warning */}
         <AntiPiracySection />
+
+        {/* Paper Types Section */}
+        <PaperTypesSection />
 
         {/* FAQ with accordion */}
         <FaqSection onCtaClick={scrollToPlans} />

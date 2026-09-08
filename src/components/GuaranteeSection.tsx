@@ -9,10 +9,10 @@ export default function GuaranteeSection() {
           <ShieldCheck className="h-10 w-10 text-pink-500" />
         </div>
         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-          Garantia Incondicional de 7 Dias
+          Garantia Incondicional de 30 Dias
         </h2>
         <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg max-w-2xl mx-auto font-medium">
-          Você tem <strong>7 dias</strong> para testar todo o material. Se por qualquer motivo você não ficar satisfeita, basta nos enviar uma mensagem e devolveremos{" "}
+          Você tem <strong>30 dias</strong> para testar todo o material. Se por qualquer motivo não ficar satisfeita, basta nos enviar uma mensagem e devolvemos{" "}
           <strong className="text-pink-600">100% do seu dinheiro</strong>. Sem burocracia, sem perguntas.
         </p>
         <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-green-50 px-4 py-2 text-sm font-bold text-green-700 ring-1 ring-green-200">

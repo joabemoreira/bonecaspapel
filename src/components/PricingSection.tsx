@@ -31,15 +31,39 @@ export default function PricingSection({ onBasicClick }: PricingSectionProps) {
     "GUIA DE BOAS-VINDAS COM MÉTODO DE USO",
     "RECEBIMENTO IMEDIATO PELO E-MAIL",
     "SUPORTE VIA WHATSAPP",
-    "ACESSO VITALÍCIO"
+    "ACESSO VITALÍCIO",
+    "Atualizações mensais inclusas"
   ];
 
-  const bonusFeatures = [
-    "100 CENÁRIOS PARA HISTORINHAS",
-    "500 PETS DE PAPEL",
-    "60 ACESSÓRIOS PARA BONECAS",
-    "120 CASINHAS DE BONECAS",
-    "ATUALIZAÇÕES MENSAIS"
+  const bonusCards = [
+    {
+      id: 'bonus-1',
+      imgId: 'bonus-img-1',
+      name: '100 Cenários para Historinhas',
+      price: 'R$27,00',
+      image: '/100 Cenários para Historinhas.webp',
+    },
+    {
+      id: 'bonus-2',
+      imgId: 'bonus-img-2',
+      name: '60 Acessórios para Bonecas',
+      price: 'R$27,00',
+      image: '/60 Acessórios para Bonecas.webp',
+    },
+    {
+      id: 'bonus-3',
+      imgId: 'bonus-img-3',
+      name: '50 Pets de Papel',
+      price: 'R$27,00',
+      image: '/50 Pets de Papel.webp',
+    },
+    {
+      id: 'bonus-4',
+      imgId: 'bonus-img-4',
+      name: '15 Casinhas de Papel para Montar',
+      price: 'R$17,00',
+      image: '/15 Casinhas de Papel para Montar.webp',
+    },
   ];
 
   return (
@@ -73,6 +97,9 @@ export default function PricingSection({ onBasicClick }: PricingSectionProps) {
               </p>
               <p className="mt-1 text-5xl font-black text-slate-900 tracking-tight">
                 R$10,00
+              </p>
+              <p className="mt-2 text-sm font-bold text-green-600">
+                Você economiza R$37,00
               </p>
               <span className="mt-2 inline-block rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-600">
                 -78% OFF
@@ -129,21 +156,39 @@ export default function PricingSection({ onBasicClick }: PricingSectionProps) {
                 </ul>
               </div>
 
-              <div className="rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-4 sm:p-5 ring-1 ring-pink-200 shadow-inner">
+              <div className="rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-3.5 sm:p-4 ring-1 ring-pink-200 shadow-inner">
                 <p className="mb-3 text-[11px] font-bold uppercase tracking-widest text-pink-500 flex items-center gap-1.5">
                   <Star className="w-3.5 h-3.5 fill-pink-500 text-pink-500" />
                   Bônus Exclusivos Premium:
                 </p>
-                <ul className="space-y-3 text-sm font-bold text-slate-900">
-                  {bonusFeatures.map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-3">
-                      <div className="rounded-full bg-pink-500 p-0.5 shrink-0">
-                        <Check className="h-3.5 w-3.5 text-white" strokeWidth={4} />
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                  {bonusCards.map((bonus) => (
+                    <div
+                      key={bonus.id}
+                      className="flex flex-col rounded-xl bg-white p-2 sm:p-2.5 border border-pink-100/90 shadow-sm text-center"
+                    >
+                      <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-pink-50 flex items-center justify-center">
+                        <img
+                          id={bonus.imgId}
+                          src={encodeURI(bonus.image)}
+                          alt={bonus.name}
+                          width={200}
+                          height={200}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                          referrerPolicy="no-referrer"
+                        />
                       </div>
-                      <span>{item}</span>
-                    </li>
+                      <h4 className="mt-2 text-xs font-bold text-slate-900 leading-tight">
+                        {bonus.name}
+                      </h4>
+                      <p className="mt-1 text-[11px] font-semibold text-rose-500">
+                        Valor: <span className="line-through text-slate-400">{bonus.price}</span>{' '}
+                        <span className="font-extrabold text-pink-600">GRÁTIS</span>
+                      </p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
 
@@ -156,6 +201,9 @@ export default function PricingSection({ onBasicClick }: PricingSectionProps) {
                   R$26,90
                 </span>
               </div>
+              <p className="mt-2 text-sm font-bold text-green-600">
+                Você economiza R$70,10
+              </p>
               <span className="mt-2 inline-block rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-600">
                 -72% OFF
               </span>
