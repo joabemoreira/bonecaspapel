@@ -17,7 +17,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "E se eu não gostar, posso pedir reembolso?",
-    a: "Com certeza. Você tem 7 dias de garantia incondicional. Se não gostar, devolvemos 100% do seu dinheiro, sem burocracia."
+    a: "Com certeza. Você tem 30 dias de garantia incondicional. Se não gostar, devolvemos 100% do seu dinheiro, sem burocracia."
   },
   {
     q: "Como recebo o material após a compra?",
