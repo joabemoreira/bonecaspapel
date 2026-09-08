@@ -1,11 +1,6 @@
-import { type MouseEvent } from 'react';
 import { ChevronDown, Printer, Clock, CloudDownload, Scissors } from 'lucide-react';
 
-interface HeroSectionProps {
-  onCtaClick: (e: MouseEvent<HTMLAnchorElement>) => void;
-}
-
-export default function HeroSection({ onCtaClick }: HeroSectionProps) {
+export default function HeroSection() {
   return (
     <section id="hero-section" className="relative overflow-hidden bg-gradient-to-b from-pink-50 via-white to-pink-50/30 px-4 pt-10 pb-12 sm:pt-16 sm:pb-20 border-b border-pink-100/50">
       <div 
@@ -109,16 +104,7 @@ export default function HeroSection({ onCtaClick }: HeroSectionProps) {
           </div>
         </div>
 
-        <a
-          id="hero-cta-button"
-          href="#planos"
-          onClick={onCtaClick}
-          className="mb-8 inline-block w-full max-w-md rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-4 sm:py-5 text-center text-[15px] sm:text-lg font-extrabold uppercase tracking-wide text-white shadow-xl shadow-pink-300/40 transition-all hover:scale-[1.02] hover:shadow-pink-400/50 hover:from-pink-600 hover:to-rose-600 active:scale-[0.98]"
-        >
-          EU QUERO AGORA!
-        </a>
-
-        <p className="mt-2 inline-flex items-center gap-2 text-sm sm:text-base font-bold text-pink-400">
+        <p className="mt-4 inline-flex items-center gap-2 text-sm sm:text-base font-bold text-pink-400">
           <span aria-hidden="true">👇</span> Arraste para baixo
         </p>
 

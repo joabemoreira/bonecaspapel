@@ -107,7 +107,7 @@ export default function App() {
 
       <main>
         {/* Hero Section */}
-        <HeroSection onCtaClick={scrollToPlans} />
+        <HeroSection />
 
         {/* What You'll Receive & Image Carousel */}
         <WhatYouGetSection />
