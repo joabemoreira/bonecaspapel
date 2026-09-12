@@ -24,47 +24,47 @@ const TESTIMONIALS: TestimonialCard[] = [
     author: 'Mariana Silva',
     tag: 'Mãe de 2 meninas',
     text: 'Minha filha não queria sair do tablet por nada. Imprimi e passamos a tarde brincando juntas criando histórias. Foi muito especial, recomendo!',
-    alt: 'Foto de criança brincando com as bonecas de papel do kit na cama',
-    badgeLabel: 'Foto enviada pela mãe',
+    alt: 'Depoimento enviado por Mariana Silva',
+    badgeLabel: 'Print de depoimento',
     aspectRatio: 'portrait',
   },
   {
     id: 2,
     type: 'print',
-    imageSrc: '/print3.webp',
+    imageSrc: '/print2.webp',
     rostoSrc: '/rosto2.webp',
     author: 'Fernanda Costa',
     tag: 'Mãe da Sofia (5 anos)',
     text: 'Olá, gostaria de agradecer, estou encantada e já ansiosa para começar!',
-    alt: 'Print de conversa no WhatsApp com Fernanda Costa elogiando o kit de bonecas de papel',
+    alt: 'Depoimento enviado por Fernanda Costa',
     badgeLabel: 'Print do WhatsApp',
     whatsappMessage: 'Ola, gostaria de agradecer, estou encantada e ja anciosa para começar ❤️',
-    aspectRatio: 'landscape',
+    aspectRatio: 'portrait',
   },
   {
     id: 3,
     type: 'photo',
-    imageSrc: '/amostra6.webp',
+    imageSrc: '/print4.webp',
     rostoSrc: '/rosto3.webp',
     author: 'Camila Rodrigues',
     tag: 'Mãe da Manu e Bia',
     text: 'Lembro das bonecas de papel da minha infância e amei reviver isso com elas. Já colecionam as bonequinhas numa pasta. O kit é lindo demais!',
-    alt: 'Foto das peças e bonecas de papel do kit prontas para brincar',
-    badgeLabel: 'Foto do kit recortado',
+    alt: 'Depoimento enviado por Camila Rodrigues',
+    badgeLabel: 'Print de depoimento',
     aspectRatio: 'portrait',
   },
   {
     id: 4,
     type: 'print',
-    imageSrc: '/print4.webp',
+    imageSrc: '/print3.webp',
     rostoSrc: '/rosto4.webp',
     author: 'Aline Moraes',
     tag: 'Mãe da Laura (6 anos)',
     text: 'Buscava alternativas para diminuir o tempo de tela da minha filha e funcionou perfeitamente! Ela recorta tudo sozinha e desenvolve a coordenação.',
-    alt: 'Print de conversa no WhatsApp com depoimento de Aline sobre redução do tempo de tela',
+    alt: 'Depoimento enviado por Aline Moraes',
     badgeLabel: 'Print do WhatsApp',
     whatsappMessage: 'Gente, fazia tempo que não via a Laura tão focada longe do celular. Ela mesma recortou as peças e montou um desfile no quarto! Parabéns pelo material maravilhoso ✨',
-    aspectRatio: 'landscape',
+    aspectRatio: 'portrait',
   },
 ];
 
@@ -385,88 +385,18 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
 
-                  {/* Conteúdo visual principal único por card (FOTO DA CRIANÇA ou PRINT REAL) */}
-                  <div className="w-full flex justify-center py-2.5">
-                    <div
-                      className={`${
-                        card.aspectRatio === 'landscape'
-                          ? 'w-[94%] sm:w-[96%] aspect-[16/10] max-h-[165px]'
-                          : 'w-[72%] sm:w-[76%] aspect-[9/16] max-h-[220px] sm:max-h-[250px]'
-                      } rounded-xl overflow-hidden bg-slate-50 border border-slate-200/80 shadow-inner flex items-center justify-center relative`}
-                    >
+                  {/* Conteúdo visual principal: Imagem vertical 9:16 centralizada */}
+                  <div className="w-full flex justify-center pt-3 pb-1">
+                    <div className="w-full max-w-[280px] sm:max-w-[290px] aspect-[9/16] rounded-xl overflow-hidden bg-slate-50 border border-slate-200/80 shadow-sm flex items-center justify-center">
                       <img
                         src={card.imageSrc}
                         alt={card.alt}
                         loading="lazy"
                         decoding="async"
                         referrerPolicy="no-referrer"
-                        className={`w-full h-full block rounded-xl ${
-                          card.type === 'photo' ? 'object-cover' : 'object-contain'
-                        }`}
-                        onError={(e) => {
-                          const target = e.currentTarget;
-                          target.style.display = 'none';
-                          const fallback = target.nextElementSibling as HTMLElement;
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
+                        className="w-full h-full object-cover block rounded-xl"
                       />
-                      {/* Fallback elegante caso a imagem do print ainda não esteja presente */}
-                      <div
-                        style={{ display: 'none' }}
-                        className={`flex-col justify-between text-left w-full h-full bg-[#EFEAE2] rounded-xl ${
-                          card.aspectRatio === 'landscape' ? 'p-2 sm:p-2.5' : 'p-3'
-                        }`}
-                      >
-                        <div className="flex items-center gap-1.5 pb-1 border-b border-black/10">
-                          <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                          <span className="text-[10px] font-bold text-slate-700">WhatsApp</span>
-                          <span className="text-[9px] text-slate-400 ml-auto">online</span>
-                        </div>
-
-                        {card.id === 2 ? (
-                          <div className="flex flex-col gap-1.5 my-auto text-[10px] leading-tight">
-                            <div className="bg-[#D9FDD3] self-end max-w-[90%] rounded-lg rounded-tr-none p-1.5 shadow-xs border border-emerald-200/60 text-slate-800">
-                              <p className="text-[9.5px]">Se tiver qualquer dúvida ou precisar de ajuda, é só responder esta mensagem. Será um prazer ajudar você! 💖</p>
-                              <span className="text-[7.5px] text-slate-500 block text-right mt-0.5">19:17 ✓✓</span>
-                            </div>
-                            <div className="bg-white self-start max-w-[90%] rounded-lg rounded-tl-none p-1.5 shadow-xs border border-black/5 text-slate-800 relative">
-                              <p className="font-medium text-slate-900 text-[10px]">Ola, gostaria de agradecer, estou encantada e ja anciosa para começar</p>
-                              <span className="text-[7.5px] text-slate-400 block text-right mt-0.5">19:45</span>
-                              <span className="absolute -bottom-1.5 left-1 text-[11px]">❤️</span>
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="bg-white rounded-lg rounded-tl-none p-2 shadow-xs border border-black/5 text-slate-800 text-[10px] leading-snug my-auto">
-                            <p className="font-medium text-slate-900 text-[10px] line-clamp-4">
-                              {card.whatsappMessage || card.text}
-                            </p>
-                            <span className="text-[8px] text-slate-400 block text-right mt-1">19:45 ✓✓</span>
-                          </div>
-                        )}
-
-                        <div className="text-[8.5px] text-slate-500 text-center font-medium bg-white/75 py-0.5 rounded">
-                          Depoimento de {card.author.split(' ')[0]}
-                        </div>
-                      </div>
-
-                      {/* Tag sutil identificando o tipo */}
-                      <span
-                        className={`absolute bottom-1.5 right-1.5 text-[9px] font-semibold px-2 py-0.5 rounded-full shadow-xs ${
-                          card.type === 'photo'
-                            ? 'bg-pink-600/85 text-white'
-                            : 'bg-slate-800/80 text-white'
-                        }`}
-                      >
-                        {card.badgeLabel || (card.type === 'photo' ? 'Foto enviada' : 'Print real')}
-                      </span>
                     </div>
-                  </div>
-
-                  {/* Depoimento em texto abaixo */}
-                  <div className="mt-auto pt-2.5 border-t border-pink-50">
-                    <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed text-center">
-                      "{card.text}"
-                    </p>
                   </div>
                 </div>
               </div>

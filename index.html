@@ -14,6 +14,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="/mokup.webp" type="image/webp" fetchpriority="high">
 
+    <!-- Compatibility patch for environments where window.fetch has only a getter -->
+    <script>
+      (function() {
+        try {
+          var nativeFetch = window.fetch ? window.fetch.bind(window) : null;
+          if (nativeFetch) {
+            var currentFetch = nativeFetch;
+            try {
+              Object.defineProperty(window, 'fetch', {
+                get: function() { return currentFetch; },
+                set: function(fn) { currentFetch = fn; },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (e1) {
+              try {
+                Object.defineProperty(window, 'fetch', {
+                  value: currentFetch,
+                  writable: true,
+                  configurable: true,
+                  enumerable: true
+                });
+              } catch (e2) {}
+            }
+          }
+        } catch (e) {}
+
+        var suppressFetchError = function(msg) {
+          return typeof msg === 'string' && (
+            msg.indexOf('Cannot set property fetch') !== -1 ||
+            (msg.indexOf('fetch') !== -1 && msg.indexOf('getter') !== -1)
+          );
+        };
+
+        window.addEventListener('error', function(e) {
+          if (e && (suppressFetchError(e.message) || (e.error && suppressFetchError(e.error.message)))) {
+            if (e.preventDefault) e.preventDefault();
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+
+        var oldOnError = window.onerror;
+        window.onerror = function(msg, url, line, col, err) {
+          if (suppressFetchError(msg) || (err && suppressFetchError(err.message))) {
+            return true;
+          }
+          if (typeof oldOnError === 'function') {
+            return oldOnError.apply(this, arguments);
+          }
+        };
+      })();
+    </script>
+
     <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
