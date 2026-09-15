@@ -1,7 +1,8 @@
 import { useState, useEffect, type MouseEvent } from 'react';
-import TopNotificationBar from './components/TopNotificationBar';
+import TopNotificationBar, { INITIAL_PROMO_SECONDS } from './components/TopNotificationBar';
 import SalesToast from './components/SalesToast';
 import HeroSection from './components/HeroSection';
+import DollShowcaseSection from './components/DollShowcaseSection';
 import WhatYouGetSection from './components/WhatYouGetSection';
 import QualificationSection from './components/QualificationSection';
 import PricingSection from './components/PricingSection';
@@ -9,6 +10,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 import GuaranteeSection from './components/GuaranteeSection';
 import AntiPiracySection from './components/AntiPiracySection';
 import PaperTypesSection from './components/PaperTypesSection';
+import EmotionalBreakSection from './components/EmotionalBreakSection';
 import FaqSection from './components/FaqSection';
 import DiscountModal from './components/DiscountModal';
 import Footer from './components/Footer';
@@ -17,6 +19,15 @@ let hasTrackedViewContent = false;
 
 export default function App() {
   const [isDiscountModalOpen, setIsDiscountModalOpen] = useState(false);
+  const [promoTimeLeft, setPromoTimeLeft] = useState(INITIAL_PROMO_SECONDS);
+
+  // Synchronized countdown timer for top notification bar and emotional break section
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPromoTimeLeft((prev) => (prev <= 1 ? INITIAL_PROMO_SECONDS : prev - 1));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   // Track ViewContent event once when the "Escolha Seu Pacote" section (#planos) enters viewport
   useEffect(() => {
@@ -103,11 +114,14 @@ export default function App() {
       />
 
       {/* Top Countdown Promotion Bar */}
-      <TopNotificationBar />
+      <TopNotificationBar timeLeft={promoTimeLeft} />
 
       <main>
         {/* Hero Section */}
-        <HeroSection />
+        <HeroSection onCtaClick={scrollToPlans} />
+
+        {/* Doll Showcase / Preview Section */}
+        <DollShowcaseSection />
 
         {/* What You'll Receive & Image Carousel */}
         <WhatYouGetSection />
@@ -129,6 +143,9 @@ export default function App() {
 
         {/* Paper Types Section */}
         <PaperTypesSection />
+
+        {/* Emotional Break with Countdown Timer */}
+        <EmotionalBreakSection timeLeft={promoTimeLeft} onCtaClick={scrollToPlans} />
 
         {/* FAQ with accordion */}
         <FaqSection onCtaClick={scrollToPlans} />

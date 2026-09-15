@@ -1,4 +1,4 @@
-import { FileText, Layers, Sparkles } from 'lucide-react';
+import { FileText, Layers, Sparkles, Lightbulb } from 'lucide-react';
 
 const PAPER_TYPES = [
   {
@@ -19,18 +19,24 @@ const PAPER_TYPES = [
     title: 'Papel Fotográfico (180g ou 230g)',
     description: 'As bonecas ficam ainda mais firmes, com um acabamento diferente.',
   },
+  {
+    id: 'dica-troca',
+    icon: Lightbulb,
+    title: 'Dica: Como trocar a roupa sem rasgar',
+    description: 'Dobre as abinhas da roupa com cuidado na primeira vez — depois disso, elas ficam soltinhas e sua filha troca o look sozinha, quantas vezes quiser, sem rasgar.',
+  },
 ];
 
 export default function PaperTypesSection() {
   return (
     <section id="tipos-de-papel" className="bg-white px-4 py-12 sm:py-16 border-t border-pink-100">
-      <div className="mx-auto max-w-4xl text-center">
+      <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 uppercase">
           COMO VOCÊ VAI IMPRIMIR AS BONECAS?
         </h2>
 
         <div className="mt-10 rounded-2xl bg-pink-50/60 border border-pink-100/90 p-6 sm:p-8 shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
             {PAPER_TYPES.map((type) => {
               const Icon = type.icon;
               return (

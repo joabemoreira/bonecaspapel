@@ -228,13 +228,13 @@ export default function PricingSection({ onBasicClick }: PricingSectionProps) {
           </div>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-1.5 text-sm font-semibold text-white/95">
-          <div className="flex text-yellow-400">
+        <div className="mt-8 flex items-center justify-center gap-1.5 text-sm font-semibold text-white/95 text-center px-4">
+          <div className="flex text-yellow-400 shrink-0">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="h-4 w-4 fill-current text-yellow-400" />
             ))}
           </div>
-          <span>Mais de 9.435 mães já baixaram</span>
+          <span>Centenas de mães já transformaram a tarde da filha com esse material</span>
         </div>
       </div>
     </section>

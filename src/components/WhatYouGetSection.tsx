@@ -26,7 +26,7 @@ export default function WhatYouGetSection() {
           {[
             {
               title: "+350 bonecas em 30 temas diferentes",
-              subtitle: "(guerreiras do Kpop, princesa, fada, sereia, bailarina, unicórnio…)",
+              subtitle: "(Princesa, Fada, Sereia, Bailarina, Unicórnio, Festa do Pijama, Praia, Escola, Aniversário, Fazenda, Espaço, Super-Herói, Doceria, Cabeleireiro, Surfista, Jardim, Esportes, Natal, Halloween, Carnaval, Copa do Mundo, Policial, Popstar, Veterinária, Viajante, Festa Junina, Cozinheiro, Páscoa, Professores, Guerreiras do Kpop)",
             },
             {
               title: "+450 acessórios em 30 temas diferentes",

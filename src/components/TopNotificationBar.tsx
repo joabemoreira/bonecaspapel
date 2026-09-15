@@ -1,22 +1,31 @@
 import { useState, useEffect } from 'react';
 
-const INITIAL_SECONDS = 15 * 60; // 15 minutos (00:15:00)
+export const INITIAL_PROMO_SECONDS = 15 * 60; // 15 minutos (00:15:00)
 
-export default function TopNotificationBar() {
-  const [timeLeft, setTimeLeft] = useState(INITIAL_SECONDS);
+export function formatCountdownTime(totalSeconds: number): string {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+interface TopNotificationBarProps {
+  timeLeft?: number;
+}
+
+export default function TopNotificationBar({ timeLeft: propTimeLeft }: TopNotificationBarProps) {
+  const [localTimeLeft, setLocalTimeLeft] = useState(INITIAL_PROMO_SECONDS);
 
   useEffect(() => {
+    if (propTimeLeft !== undefined) return;
     const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev <= 1 ? INITIAL_SECONDS : prev - 1));
+      setLocalTimeLeft((prev) => (prev <= 1 ? INITIAL_PROMO_SECONDS : prev - 1));
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [propTimeLeft]);
 
-  const hours = Math.floor(timeLeft / 3600);
-  const minutes = Math.floor((timeLeft % 3600) / 60);
-  const seconds = timeLeft % 60;
-
-  const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  const timeLeft = propTimeLeft !== undefined ? propTimeLeft : localTimeLeft;
+  const formattedTime = formatCountdownTime(timeLeft);
 
   return (
     <div id="top-notification-bar" className="bg-gradient-to-r from-red-600 via-[#e60000] to-red-600 text-center text-white overflow-hidden shadow-md">
