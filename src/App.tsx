@@ -14,6 +14,7 @@ import EmotionalBreakSection from './components/EmotionalBreakSection';
 import FaqSection from './components/FaqSection';
 import DiscountModal from './components/DiscountModal';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 let hasTrackedViewContent = false;
 
@@ -153,6 +154,9 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating WhatsApp Support Button */}
+      <WhatsAppButton />
     </div>
   );
 }
